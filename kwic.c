@@ -43,7 +43,7 @@ void copy(const char *alias) {
         char *colon = strchr(line, ':');
         if (!colon) continue;
 
-        *colon = '\0'; // remove colon
+        *colon = '\0';
         char *key = line; // alias
         char *val = colon + 1; // value
 
