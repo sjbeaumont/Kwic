@@ -156,7 +156,7 @@ int main(int argc, char *argv[]) {
             i += 1;
         }
 
-        else if (strcmp(argv[i], "clr") == 0) {
+        else if (strcmp(argv[i], "clear") == 0) {
             system("printf '' | wl-copy");
         } 
 
