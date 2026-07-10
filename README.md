@@ -4,7 +4,7 @@ Kwic is a tool that means you never have to find your API keys again. Just save 
 
 > *I don't really know to do the fancy MD stuff you always see, so forgive the poor appearance.*
 
-> **Important:** if you don't want to read the whole thing, please just take a look at [this](#disclaimer) and especially **[this](#dependencies)**
+> **Important:** if you don't want to read the whole thing, please just take a look at [this](#disclaimer) and especially **[this.](#dependencies)** For **copyright info** view the [license.](LICENSE)
 
 <br>
 
