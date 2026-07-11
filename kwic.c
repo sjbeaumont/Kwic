@@ -47,7 +47,7 @@ static void usage(void) {
 void new(const char *alias, const char *value) {
     FILE *kwicd;
     kwicd = fopen(path, "a");
-    if (!kwicd) { printf("Kwicd file not found."); exit(0); };
+    if (!kwicd) { printf("Kwicd file not found."); exit(1); };
 
     fprintf(kwicd, "%s:%s\n", alias, value);
     fflush(kwicd);
@@ -59,7 +59,7 @@ void copy(const char *alias) {
     char line[4096];
 
     kwicd = fopen(path, "r");
-    if (!kwicd) { printf("Kwicd file not found."); exit(0); }
+    if (!kwicd) { printf("Kwicd file not found."); exit(1); }
 
     while (fgets(line, sizeof(line), kwicd)) {
         line[strcspn(line, "\r\n")] = '\0';
@@ -120,14 +120,14 @@ void delete(const char *alias) {
     int cur_ln = 1;
     int del_ln = scan(alias);
 
-    if (del_ln == -2) { printf("Kwicd file not found.\n"); exit(0); }
-    else if (del_ln == -1) { printf("Alias not found.\n"); exit(0); }
+    if (del_ln == -2) { printf("Kwicd file not found.\n"); exit(1); }
+    else if (del_ln == -1) { printf("Alias not found.\n"); exit(1); }
     
     kwicd = fopen(path, "r");
     temp = fopen(temppath, "w");
 
-    if (!kwicd) { printf("Kwicd file not found."); exit(0); }
-    if (!temp) {printf("Temporary Kwicd file could not be created."); exit(0); }
+    if (!kwicd) { printf("Kwicd file not found."); exit(1); }
+    if (!temp) {printf("Temporary Kwicd file could not be created."); exit(1); }
 
     while (fgets(line, sizeof(line), kwicd)) {
         if (cur_ln != del_ln) {
