@@ -35,6 +35,3 @@ other.o: other.c include/other.h
 # cleanup (make clean)
 clean:
 	rm -f $(OBJS) $(TARGET)
-
-cleano:
-	rm -f $(OBJS)
