@@ -1,0 +1,16 @@
+/*
+ * Copyright (c) 2026 Sam (sjbeaumont)
+ * SPDX-License-Identifier: MIT
+ * Distributed under the terms of the MIT License.
+ */
+
+#ifndef FLAGS_H
+#define FLAGS_H
+
+#include "other.h"
+
+void append(const char *alias, const char *value, const char *kwicdP);
+void copy(const char *alias, const char *kwicdP);
+void delAlias(const char *alias, const char *kwicdP, const char *tempKwicdP);
+
+#endif

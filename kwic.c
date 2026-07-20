@@ -16,8 +16,22 @@ char tempKwicdP[256]; // used to store kwicd-temp.txt path
 char renameValue[4096]; // used to store value when renaming
 
 
-#include "h/other.h" // custom header files sit below global vars
-#include "h/flags.h"
+#include "include/other.h"
+#include "include/flags.h"
+
+
+
+static int mkdir_if_missing(const char *dir) {
+    if (mkdir(dir, 0755) == 0) return 0;
+    if (errno == EEXIST) return 0;
+    return -1;
+}
+
+static void usage(void) {
+    printf("Usage error.\n");
+    exit(1);
+}
+
 
 
 int main(int argc, char *argv[]) {
