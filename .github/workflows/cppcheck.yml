@@ -1,0 +1,25 @@
+name: Static Analysis
+
+on:
+  push:
+    branches: [main, master]
+  pull_request:
+    branches: [main, master]
+
+jobs:
+  cppcheck:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v4
+
+      - name: Install Cppcheck
+        run: sudo apt-get update && sudo apt-get install -y cppcheck
+
+      - name: Run Cppcheck with warning, performance and portability flags on all files
+        run: |
+          cppcheck --enable=warning,portability,performance \
+                   --suppress=missingIncludeSystem \
+                   --inline-suppr \
+                   --error-exitcode=0 \
+                   .

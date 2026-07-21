@@ -6,3 +6,4 @@ kwic
 releases/*
 bin-files/*
 bin/*
+.vscode
